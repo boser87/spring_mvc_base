@@ -26,6 +26,10 @@ public class ExerciseServiceImpl implements ExerciseService {
 		Activity swim = new Activity();
 		swim.setDesc("Swim");
 		activities.add(swim);
+
+		Activity play = new Activity();
+		swim.setDesc("play");
+		activities.add(play);
 		
 		return activities;
 	}
