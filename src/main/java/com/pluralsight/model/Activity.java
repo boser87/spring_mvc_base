@@ -1,15 +1,31 @@
 package com.pluralsight.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Activity {
 
-	private String desc;
+    @Id
+    @GeneratedValue
+    private Long id;
 
-	public String getDesc() {
-		return desc;
-	}
+    private String description;
 
-	public void setDesc(String desc) {
-		this.desc = desc;
-	}
-	
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String desc) {
+        this.description = desc;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

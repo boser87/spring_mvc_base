@@ -16,19 +16,19 @@ public class ExerciseServiceImpl implements ExerciseService {
 		List<Activity> activities = new ArrayList<Activity>();
 		
 		Activity run = new Activity();
-		run.setDesc("Run");
+		run.setDescription("Run");
 		activities.add(run);
 		
 		Activity bike = new Activity();
-		bike.setDesc("Bike");
+		bike.setDescription("Bike");
 		activities.add(bike);
 		
 		Activity swim = new Activity();
-		swim.setDesc("Swim");
+		swim.setDescription("Swim");
 		activities.add(swim);
 
 		Activity play = new Activity();
-		swim.setDesc("play");
+		swim.setDescription("play");
 		activities.add(play);
 		
 		return activities;
