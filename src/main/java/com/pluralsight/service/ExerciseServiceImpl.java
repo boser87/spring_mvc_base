@@ -8,6 +8,7 @@ import com.pluralsight.model.Goal;
 import com.pluralsight.repository.ExerciseRepository;
 import com.pluralsight.repository.GoalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.pluralsight.model.Activity;
