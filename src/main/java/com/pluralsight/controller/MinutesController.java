@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import com.pluralsight.model.Goal;
+import com.pluralsight.service.GoalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -42,7 +43,8 @@ public class MinutesController {
 		} else {
 			Goal goal = (Goal) session.getAttribute("goal");
 			exercise.setGoal(goal);
-			exerciseService.save(exercise);
+			Goal updatedGoal = exerciseService.saveAndUpdateGoal(exercise);
+			session.setAttribute("goal", updatedGoal);
 		}
 		
 		return "addMinutes";

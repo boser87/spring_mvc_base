@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.pluralsight.model.Exercise;
+import com.pluralsight.model.Goal;
 import com.pluralsight.repository.ExerciseRepository;
+import com.pluralsight.repository.GoalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,9 @@ public class ExerciseServiceImpl implements ExerciseService {
 
 	@Autowired
 	private ExerciseRepository exerciseRepository;
+
+	@Autowired
+	private GoalRepository goalRepository;
 
 	public List<Activity> findAllActivities() {
 		
@@ -45,6 +50,16 @@ public class ExerciseServiceImpl implements ExerciseService {
 	@Transactional
 	public Exercise save(Exercise exercise) {
 		return exerciseRepository.save(exercise);
+	}
+
+	@Override
+	@Transactional
+	public Goal saveAndUpdateGoal(Exercise exercise) {
+		Exercise savedExercise = save(exercise);
+		Goal goal = savedExercise.getGoal();
+		goal.setMinutes(goal.getMinutes() - savedExercise.getMinutes());
+		goalRepository.save(goal);
+		return goal;
 	}
 
 }

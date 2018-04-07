@@ -19,8 +19,12 @@ public class GoalRepositoryImpl implements GoalRepository {
 
     @Override
     public Goal save(Goal goal) {
-        entityManager.persist(goal);
-        entityManager.flush();
+        if(goal.getId() == null) {
+            entityManager.persist(goal);
+            entityManager.flush();
+        } else {
+            entityManager.merge(goal);
+        }
         return goal;
     }
 

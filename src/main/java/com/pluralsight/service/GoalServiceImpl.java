@@ -1,5 +1,6 @@
 package com.pluralsight.service;
 
+import com.pluralsight.model.Exercise;
 import com.pluralsight.model.Goal;
 import com.pluralsight.model.GoalReport;
 import com.pluralsight.repository.GoalRepository;
