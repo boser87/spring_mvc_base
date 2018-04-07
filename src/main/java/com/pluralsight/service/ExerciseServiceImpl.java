@@ -58,7 +58,7 @@ public class ExerciseServiceImpl implements ExerciseService {
 		Exercise savedExercise = save(exercise);
 		Goal goal = savedExercise.getGoal();
 		goal.setMinutes(goal.getMinutes() - savedExercise.getMinutes());
-		goalRepository.save(goal);
+		goal = goalRepository.save(goal);
 		return goal;
 	}
 

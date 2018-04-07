@@ -23,7 +23,7 @@ public class GoalRepositoryImpl implements GoalRepository {
             entityManager.persist(goal);
             entityManager.flush();
         } else {
-            entityManager.merge(goal);
+            goal = entityManager.merge(goal);
         }
         return goal;
     }
