@@ -19,15 +19,15 @@ public class Goal {
     @Column(name = "MINUTES")
     private int minutes;
 
-    @OneToMany(mappedBy = "goal", cascade = CascadeType.ALL)
-    private List<Exercise> excercises = new ArrayList<>();
+    @OneToMany(mappedBy = "goal", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Exercise> exercises = new ArrayList<>();
 
-    public List<Exercise> getExcercises() {
-        return excercises;
+    public List<Exercise> getExercises() {
+        return exercises;
     }
 
-    public void setExcercises(List<Exercise> excercises) {
-        this.excercises = excercises;
+    public void setExercises(List<Exercise> excercises) {
+        this.exercises = excercises;
     }
 
     public Long getId() {
